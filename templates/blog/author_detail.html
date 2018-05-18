@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ author.first_name }}</title>
+</head>
+<body>
+    <h4>{{ author.first_name }} {{ author.last_name }}</h4>
+    <p>{{ author.date_of_birth }} {% if author.date_of_death %} - {{ author.date_of_death }}{% endif %}</p>
+    <img src="{{ author.author_img.url }}">
+    <p>{{ author.author_description }}</p>
+
+    <h4>{{ author.first_name }} Posts</h4>
+    {% for post in author.post_set.all %}
+        <a href="{{ post.get_absolute_url }}">{{ post }}</a>
+    {% endfor %}
+</body>
+</html>

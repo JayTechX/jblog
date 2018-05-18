@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.post_name }}</title>
+</head>
+<body>
+    <h3>{{ post.post_name }}</h3>
+    <a href="{{ post.post_author.get_absolute_url }}"><span>by {{ post.post_author }}</span></a>
+    <span>{{ post.post_date }}</span>
+    <br>
+    <img src="{{ post.post_img.url }}" style="height: 100px; width: 100px;">
+    <p>{{ post.post_message }}</p>
+</body>
+</html>

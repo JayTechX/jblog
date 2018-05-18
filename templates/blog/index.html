@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Jblog</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Welcome to Jblog.</h1>
+        {% for post in post_list %}
+            <img src="{{ post.post_img.url }}" style="width:70px; height: 70px;" alt = "{{ post.post_name }} image">
+            <a href = "{{ post.get_absolute_url }}"><p>{{ post.post_name }}</p></a>
+            <kbd>{{ post.post_highlight }}</kbd>
+            <span>on {{ post.post_date }}</span>
+            <a href="{{ post.post_author.get_absolute_url }}"> <p>By {{ post.post_author }}</p></a>
+
+        {% endfor %}
+    </div>
+</body>
+</html>
